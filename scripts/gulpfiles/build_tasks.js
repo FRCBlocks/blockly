@@ -326,6 +326,7 @@ function buildJava() {
  *     php_compressed.js
  *     lua_compressed.js
  *     dart_compressed.js
+ *     java_compressed.js
  */
 const buildGenerators = gulp.parallel(
   buildJavascript,
