@@ -15,11 +15,14 @@ body {
 }
 
 #blocklyArea {
-  height: 99%;
+  height: 100%;
   width: 70%;
+  float: left;
 }
 
-#blocklyArea {
-  height: 99%;
-  width: 70%;
+#codeArea {
+  height: 100%;
+  width: 30%;
+  background-color: lightgray;
+  float: right;
 }
