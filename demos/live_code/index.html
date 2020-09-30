@@ -5,16 +5,38 @@
   <title>Blockly Demo: Live Coding</title>
   <script src="../../blockly_compressed.js"></script>
   <script src="../../blocks_compressed.js"></script>
-  <script src="../../javascript_compressed.js"></script>
+
   <script src="../../java_compressed.js"></script>
+  <script src="../../javascript_compressed.js"></script>
+  <script src="../../python_compressed.js"></script>
+  <script src="../../php_compressed.js"></script>
+  <script src="../../lua_compressed.js"></script>
+  <script src="../../dart_compressed.js"></script>
+
   <script src="../../msg/js/en.js"></script>
+  <script src="https://www.gstatic.com/external_hosted/google_code_prettify/prettify_compiled.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="content">
     <div id="blocklyArea"></div>
-    <div id="codeArea">
-      <div></div>
+    <div id="codeArea" class="main">
+      <div class="dropdown-bar">
+        Language:
+        <div id="im-just-an-underline">
+          <select id="languageDropdown" onchange="onWorkspaceChange();">
+            <option value="Java">Java</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="PHP">PHP</option>
+            <option value="Lua">Lua</option>
+            <option value="Dart">Dart</option>
+          </select>
+        </div>
+      </div>
+      <hr/>
+
+      <devsite-code></devsite-code>
     </div>
   </div>
 
