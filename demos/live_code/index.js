@@ -1,7 +1,7 @@
 var blocklyArea = document.getElementById('blocklyArea');
 var blocklyDiv = document.getElementById('blocklyDiv');
 
-var demoWorkspace = Blockly.inject(
+var workspace = Blockly.inject(
   blocklyDiv,
   {media: '../../media/', toolbox: document.getElementById('toolbox')}
 );
@@ -23,8 +23,24 @@ var onresize = function(e) {
   blocklyDiv.style.top = y + 'px';
   blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
   blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
-  Blockly.svgResize(demoWorkspace);
+  Blockly.svgResize(workspace);
 };
 window.addEventListener('resize', onresize, false);
 onresize();
-Blockly.svgResize(demoWorkspace);
+Blockly.svgResize(workspace);
+
+
+// Update code on block change
+function onWorkspaceChange(event) {
+  // var languageDropdown = document.getElementById('languageDropdown');
+  // var languageSelection = languageDropdown.options[languageDropdown.selectedIndex].value;
+  var codeDiv = document.getElementById('codeArea');
+  var codeHolder = document.createElement('pre');
+  codeHolder.className = 'prettyprint but-not-that-pretty';
+  // var code = document.createTextNode(Blockly[languageSelection].workspaceToCode(workspace));
+  var code = document.createTextNode(Blockly["JavaScript"].workspaceToCode(workspace));
+  codeHolder.appendChild(code);
+  codeDiv.replaceChild(codeHolder, codeDiv.lastElementChild);
+  prettyPrint();
+}
+workspace.addChangeListener(onWorkspaceChange);
