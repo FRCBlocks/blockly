@@ -312,6 +312,14 @@ function buildDart() {
 };
 
 /**
+ * This task builds the Java generator:
+ *     java_compressed.js
+ */
+function buildJava() {
+  return buildGenerator('java', 'Java');
+};
+
+/**
  * This tasks builds all the generators:
  *     javascript_compressed.js
  *     python_compressed.js
@@ -324,7 +332,8 @@ const buildGenerators = gulp.parallel(
   buildPython,
   buildPHP,
   buildLua,
-  buildDart
+  buildDart,
+  buildJava
 );
 
 /**
