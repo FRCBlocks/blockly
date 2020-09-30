@@ -108,7 +108,7 @@ Blockly.Java.EXTRAINDENT = '';
  */
 Blockly.Java.variableTypes_ = {};
 /**
- * List of all known Blockly variable types. 
+ * List of all known Blockly variable types.
  *  NOTE: Only valid after a call to workspaceToCode
  */
 Blockly.Java.blocklyTypes_ = {};
@@ -151,7 +151,7 @@ Blockly.Java.classes_ = [];
  */
 Blockly.Java.globals_ = {};
 /**
- * Target Blockly type to generate code for (if any) 
+ * Target Blockly type to generate code for (if any)
  */
 Blockly.Java.targetType_ = null;
 /**
@@ -267,7 +267,7 @@ Blockly.Java.addInterface = function(iface) {
 };
 /**
  * Get the interface list (if any) for the generated Java code
- * @return {Array<string>} baseclass Array of all interfaces that 
+ * @return {Array<string>} baseclass Array of all interfaces that
  *         this class implements or null if no interfaces
  */
 Blockly.Java.getInterfaces = function() {
@@ -335,9 +335,10 @@ Blockly.Java.getImports = function() {
     }
   }
 
-  var keys = goog.object.getValues(this.imports_);
-  goog.array.sort(keys);
-  return (keys.join("\n"));
+  // TODO
+  // var keys = goog.object.getValues(this.imports_);
+  // goog.array.sort(keys);
+  // return (keys.join("\n"));
 };
 
 /**
@@ -1170,18 +1171,19 @@ Blockly.Java.init = function(workspace, imports) {
   }
 
   var defvars = [];
-  Blockly.VariableTypeEquivalence['Colour'] = ['String'];
-  var variables = Blockly.Variables.allVariables(workspace);
-  this.blocklyTypes_ = Blockly.Variables.allVariablesTypes(workspace);
-  // Make sure all the type variables are pushed.  This is because we
-  // Don't return the special function parameters in the allVariables list
-  for(var name in this.blocklyTypes_) {
-      variables.push(name);
-  }
-  for (var x = 0; x < variables.length; x++) {
-    var key = variables[x];
-    this.variableTypes_[key] = this.mapType(this.blocklyTypes_[key]);
-  }
+  // TODO
+  // Blockly.VariableTypeEquivalence['Colour'] = ['String'];
+  // var variables = Blockly.Variables.allVariables(workspace);
+  // this.blocklyTypes_ = Blockly.Variables.allVariablesTypes(workspace);
+  // // Make sure all the type variables are pushed.  This is because we
+  // // Don't return the special function parameters in the allVariables list
+  // for(var name in this.blocklyTypes_) {
+  //     variables.push(name);
+  // }
+  // for (var x = 0; x < variables.length; x++) {
+  //   var key = variables[x];
+  //   this.variableTypes_[key] = this.mapType(this.blocklyTypes_[key]);
+  // }
 };
 
 /**
