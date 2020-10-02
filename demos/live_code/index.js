@@ -3,33 +3,33 @@ var blocklyDiv = document.getElementById('blocklyDiv');
 var toolbox = document.getElementById('toolbox');
 
 var options = {
-	toolbox : toolbox,
-	collapse : true,
-	comments : true,
-	disable : false,
-	maxBlocks : Infinity,
-	trashcan : true,
-	horizontalLayout : false,
-	toolboxPosition : 'start',
-	css : true,
-	media : 'https://blockly-demo.appspot.com/static/media/',
-	rtl : false,
-	scrollbars : true,
-	sounds : true,
-	oneBasedIndex : true,
-	grid : {
-		spacing : 20,
-		length : 1,
-		colour : '#888',
-		snap : true
+	toolbox: toolbox,
+	collapse: true,
+	comments: true,
+	disable: false,
+	maxBlocks: Infinity,
+	trashcan: true,
+	horizontalLayout: false,
+	toolboxPosition: 'start',
+	css: true,
+	media: '../../media/',
+	rtl: false,
+	scrollbars: true,
+	sounds: true,
+	oneBasedIndex: true,
+	grid: {
+		spacing: 20,
+		length: 1,
+		colour: '#888',
+		snap: true
 	},
-	zoom : {
-		controls : true,
-		wheel : true,
-		startScale : 1,
-		maxScale : 3,
-		minScale : 0.1,
-		scaleSpeed : 1.1
+	zoom: {
+		controls: true,
+		wheel: true,
+		startScale: 1,
+		maxScale: 3,
+		minScale: 0.1,
+		scaleSpeed: 1.1
 	}
 };
 
