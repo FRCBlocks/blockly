@@ -335,10 +335,9 @@ Blockly.Java.getImports = function() {
     }
   }
 
-  // TODO
-  // var keys = goog.object.getValues(this.imports_);
-  // goog.array.sort(keys);
-  // return (keys.join("\n"));
+  var keys = Object.values(this.imports_);
+  keys.sort();
+  return (keys.join("\n"));
 };
 
 /**
